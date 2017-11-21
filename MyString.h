@@ -8,11 +8,19 @@
 #include <stdlib.h>
 #include <time.h>
 #include <memory>
-//#include <string> // THIS IS NOT ALLOWED. No C++ string class allowed
 using namespace std;
 
 class MyString
 {
+private:
+    int nlength;
+    unique_ptr<char[]> internalCString;
+public:
+    MyString();
+    MyString(const char * cString);
+
+    char * getInternalCString() const;
+
 };
 
 #endif //HW7_MYSTRING_H
