@@ -20,6 +20,11 @@ public:
     MyString(const char * cString);
 
     char * getInternalCString() const;
+    int getNlength() const;
+    int compareStr (const MyString & lhs,const MyString & rhs);
+    void reverseit();
+
+    ostream & operator<< (ostream &os, const MyString &myString);
 
 };
 

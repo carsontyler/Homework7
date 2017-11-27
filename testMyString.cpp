@@ -36,7 +36,7 @@ TEST_CASE("2) Testing MyString Empty")
 
 /*!
  * @test 3) Testing MyString Compare Method
- *//*
+ */
 TEST_CASE("3) Testing MyString Compare")
 {
     INFO("3) Testing MyString Compare");
@@ -71,7 +71,8 @@ TEST_CASE("3) Testing MyString Compare")
 }
 /*!
  * @test 4) Testing MyString Revert Method
- *//*
+ */
+/*
 TEST_CASE("4) Testing MyString Revert")
 {
     INFO("4) Testing MyString Revert");
