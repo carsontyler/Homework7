@@ -14,12 +14,15 @@ MyString::MyString()
 MyString::MyString(const char *cString)
 {
     int temp = 0;
-    for(int i = 0; i <= sizeof cString; i++)
+    while(cString[temp] != '\0')
     {
         temp++;
     }
-    internalCString = make_unique<char[]>(temp+1);
-    for(int i = 0; i <= temp + 1; i++)
+
+    nlength = temp;
+    internalCString = make_unique<char[]>(nlength);
+
+    for(int i = 0; i <= nlength; i++)
     {
         if(i <= temp)
         {
@@ -39,18 +42,70 @@ char *MyString::getInternalCString() const
 
 int MyString::getNlength() const
 {
-    char *temp = getInternalCString(), i;
-    i = sizeof(temp);
-    return i;
+    return nlength;
 }
 
 int MyString::compareStr(const MyString &lhs, const MyString &rhs)
 {
-    lhs.getNlength();
-    return 0;
+    int i = 0;
+    if(lhs.getNlength() > rhs.getNlength())
+    {
+        i = 1;
+    }
+    else if(lhs.getNlength() < rhs.getNlength())
+    {
+        i = -1;
+    }
+    else if(lhs.getNlength() == rhs.getNlength())
+    {
+        for(int j = 0; j < lhs.getNlength() + 1; j++)
+        {
+            if(lhs.internalCString[j] == rhs.internalCString[j])
+            {
+                i = 0;
+            }
+            else
+            {
+                i = -2;
+                j = lhs.getNlength() + 1;
+            }
+        }
+
+    }
+    else
+    {
+        cout << "internal error";
+    }
+
+    return i;
 }
 
 void MyString::reverseit()
 {
 
+    int temp = nlength;
+    char cString[nlength];
+    for(int i = 0; i <= nlength; i++)
+    {
+        if(i <= temp)
+        {
+            cString[i] = internalCString[nlength - 1 - i];
+        }
+        else if(i > temp)
+        {
+            cString[i] = '\0';
+        }
+    }
+
+    for(int i = 0; i <= nlength; i++)
+    {
+        if(i <= temp)
+        {
+            internalCString[i] = cString[i];
+        }
+        else if(i > temp)
+        {
+            internalCString[i] = '\0';
+        }
+    }
 }
