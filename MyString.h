@@ -24,7 +24,7 @@ public:
     int compareStr (const MyString & lhs,const MyString & rhs);
     void reverseit();
 
-    //ostream & operator<< (ostream &os, const MyString &myString);
+    ostream& operator<< (ostream& os, const MyString& myString);
 
 };
 
