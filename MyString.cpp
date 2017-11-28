@@ -110,11 +110,11 @@ void MyString::reverseit()
     char cString[nlength];
     for(int i = 0; i <= nlength; i++)
     {
-        if(i <= nlength)
+        if(i < nlength)
         {
             cString[i] = internalCString[nlength - 1 - i];
         }
-        else if(i > nlength)
+        else if(i >= nlength)
         {
             cString[i] = '\0';
         }
@@ -122,11 +122,11 @@ void MyString::reverseit()
 
     for(int i = 0; i <= nlength; i++)
     {
-        if(i <= nlength)
+        if(i < nlength)
         {
             internalCString[i] = cString[i];
         }
-        else if(i > nlength)
+        else if(i >= nlength)
         {
             internalCString[i] = '\0';
         }
