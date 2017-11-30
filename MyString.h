@@ -18,6 +18,7 @@ private:
 public:
     MyString();
     MyString(const char * cString);
+    ~MyString();
 
     char * getInternalCString() const;
     int getNlength() const;

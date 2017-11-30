@@ -134,6 +134,13 @@ void MyString::reverseit()
 }
 
 /*!
+ * Destructor, not used with smart pointers
+ */
+MyString::~MyString()
+{
+}
+
+/*!
  * Overloads the output stream operator so the string can be ouputed
  * @param os: The passed in ostream
  * @param myString: the passed in string to be outputed
